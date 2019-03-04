@@ -2,21 +2,13 @@
 _A development environment built upon docker._
 
 ## overview
-The intention of this project is to provide the necessary tools and packages required for a standard golang development environment which is convenient and accessible. The dev-env is built upon the an [alpine 3.8 golang image](https://hub.docker.com/_/golang), this includes the following tools/packages:
-- [golang](https://golang.org/)
+The intention of this project is to provide the necessary tools and packages required for a standard golang development environment which is convenient and accessible. The dev-env is built upon the an [alpine 3.9 image](https://hub.docker.com/_/alpine), this includes the following tools/packages:
 - [git](https://git-scm.com/)
 - [hub](https://github.com/github/hub)
 - [vi](https://www.vim.org/)
-  - [golang plugin](https://github.com/fatih/vim-go)
   - [buffer switcher](https://github.com/manniwood/vim-buf)
   - [groovy syntax highlighting](https://github.com/vim-scripts/groovy.vim)
 - [gcloud](https://cloud.google.com/sdk/gcloud/)
-- [helm](https://helm.sh/)
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- [jx](https://github.com/jenkins-x/jx)
-- [dep](https://github.com/golang/dep)
-- [ko](https://github.com/google/go-containerregistry/tree/master/cmd/ko)
-- [delve](https://github.com/go-delve/delve)
 - [pre-commit](https://pre-commit.com/)
 #### IDE
 - [GoLand](docs/goland.md)
@@ -31,6 +23,7 @@ You'll need [Docker](https://www.docker.com/) to use the dev-env, see [Docker fo
 To execute the dev-env, perform the following:
 ```
 $ git clone https://github.com/cagiti/dev-env
+$ git checkout java
 $ cd dev-env
 $ ./dev-env
 ```

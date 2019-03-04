@@ -6,7 +6,6 @@ then
   DOCKER_SOCKET=/var/run/docker.sock
   MOUNT=~/.dev-env
   WORKSPACE=~/Development/workspace
-  GO_WORKSPACE=~/Development/go-workspace
   SSH=~/.ssh
   SUDO=""
   X11_ERROR="DISPLAY environment not set, is X11 installed? See https://www.xquartz.org/releases/index.html for more information"
@@ -17,7 +16,6 @@ else
   DOCKER_SOCKET=/var/run/docker.sock
   MOUNT=~/.dev-env
   WORKSPACE=~/workspace
-  GO_WORKSPACE=~/go-workspace
   SSH=~/.ssh
   SUDO="sudo"
   X11_ERROR="Not supported"

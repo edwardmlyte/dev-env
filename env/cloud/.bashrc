@@ -15,8 +15,6 @@ function setup_aliases(){
   alias ll='ls -la'
   alias tmux='tmux -u'
   alias t='tmux -u'
-  alias kc='kubectl'
-  alias wkc='tmux split-window -h "kubectl get pods -w"; tmux split-window -v "kubectl get prowjobs -w"; tmux split-window -v "kubectl get pipelinerun -w"; watch jx logs -k'
 }
 
 function setup_hub(){
