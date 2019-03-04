@@ -11,7 +11,7 @@ The intention of this project is to provide the necessary tools and packages req
 - [gcloud](https://cloud.google.com/sdk/gcloud/)
 - [pre-commit](https://pre-commit.com/)
 #### IDE
-- [GoLand](docs/goland.md)
+- [IntelliJ](docs/intellij.md)
 
 ## support
 The dev-env has only been verified on **MacOS**. It should _execute_ on other operating systems capable of running docker containers, but you may encounter issues.
@@ -23,8 +23,8 @@ You'll need [Docker](https://www.docker.com/) to use the dev-env, see [Docker fo
 To execute the dev-env, perform the following:
 ```
 $ git clone https://github.com/cagiti/dev-env
-$ git checkout java
 $ cd dev-env
+$ git checkout java
 $ ./dev-env
 ```
 

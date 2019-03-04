@@ -1,4 +1,4 @@
-GOLAND="rycus86/goland:latest"
+INTELLIJ="rycus86/intellij-idea:latest"
 
 if [[ "${1}" == "mac" ]]
 then
