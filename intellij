@@ -8,6 +8,20 @@ then
   exit 1
 fi
 
+function create_dir() {
+  if [ ! -d "${1}" ]; then
+    mkdir ${1}
+    sudo chown ${USER}:${USER} ${1}
+  fi
+}
+
+function create_dirs() {
+  create_dir ~/.Idea
+  create_dir ~/.Idea.java
+  create_dir ~/.Idea.maven
+  create_dir ~/.Idea.gradle
+}
+
 function pull_latest() {
   docker pull ${INTELLIJ}
 }
@@ -26,5 +40,6 @@ function run() {
              ${INTELLIJ}
 }
 
+create_dirs
 pull_latest
 run
