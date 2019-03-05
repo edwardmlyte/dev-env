@@ -1,6 +1,5 @@
 #!/bin/bash
 
-[ ! -z "$CLOUD_SHELL" ] && ENV=cloud || ENV=mac
 source ./env/env.sh $ENV
 
 if [ -z $DISPLAY ]
@@ -9,24 +8,6 @@ then
   exit 1
 fi
 
-function setup_env_vars() {
-  PORT=$(ps -ef | grep "Xquartz :\d" | grep -v xinit | awk '{ print $9; }')
-  display="--env DISPLAY=$(hostname)${PORT}"
-}
-
-function setup_xquartz() {
-  if [ -x $XHOST ]
-  then
-    [ -z $(pgrep Xquartz) ] && $XHOST
-    if [ `$XHOST | grep -ic $(hostname)` -eq 0 ]
-    then
-      xhost + $(hostname)
-    fi
-  else
-    echo "${XQUARTZ_ERROR}"
-  fi
-}
-
 function pull_latest() {
   docker pull ${INTELLIJ}
 }
@@ -34,8 +15,8 @@ function pull_latest() {
 function run() {
   docker run --rm \
              --detach \
-             ${display} \
-             --volume ${DISPLAY/:0}:/tmp/.X11-unix \
+             --env DISPLAY=${DISPLAY} \
+             --volume /tmp/.X11-unix:/tmp/.X11-unix \
              --volume ~/.Idea:/home/developer/.Idea \
              --volume ~/.Idea.java:/home/developer/.java \
              --volume ~/.Idea.maven:/home/developer/.m2 \
@@ -45,7 +26,5 @@ function run() {
              ${INTELLIJ}
 }
 
-setup_xquartz
-setup_env_vars
 pull_latest
 run
